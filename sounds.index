@@ -1,0 +1,11 @@
+{
+    "translationCatalog" : "ambience-template",
+    "files" : [
+        { "displayName" : "template-ringtone"          , "fileName" : "template-ringtone.wav" },
+        { "displayName" : "template-messagetone"       , "fileName" : "template-message.wav" },
+        { "displayName" : "template-imtone"            , "fileName" : "template-im.wav" },
+        { "displayName" : "template-emailtone"         , "fileName" : "template-email.wav" },
+        { "displayName" : "template-calendar-alarm"    , "fileName" : "template-calendar.wav" },
+        { "displayName" : "template-clock-alarm"       , "fileName" : "template-clock.wav" }
+    ]
+}
