@@ -1,36 +1,40 @@
-Name:       ambience-template
+Name:       harbour-ambience-template
 
-Summary:    Template ambience
-Version:    0.0.1
-Release:    1
+Summary:    Your Ambience
+Version:    0.1.0
+Release:    0.1
 Group:      System/GUI/Other
 License:    TBD
 Source0:    %{name}-%{version}.tar.bz2
+BuildArch:  noarch
 BuildRequires:  qt5-qttools
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  qt5-qmake
+Vendor: Your Name
+Packager: Your Name <your@email>
 
+# This requirement is verboten for Harbour submission
 Requires:   ambienced
 
 %description
-This is a template ambience description
+This is the very flowery description of your fabulous new template
 
 %package ts-devel
-Summary:   Translation source for template ambience
+Summary:   Translation source for %name
 License:   TBD
 Group:     System/GUI/Other
 
 %description ts-devel
-Translation source for a template ambience
+Translation source for %name
 
 %prep
 %setup -q -n %{name}-%{version}
 
 %build
 
-%qmake5
+%qtc_qmake5
 
-make %{?jobs:-j%jobs}
+%qtc_make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
@@ -38,12 +42,21 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{_datadir}/ambience/ambience-template/ambience-template.ambience
-%{_datadir}/ambience/ambience-template/sounds.index
-%{_datadir}/ambience/ambience-template/images/*
-%{_datadir}/ambience/ambience-template/sounds/*
-%{_datadir}/translations/ambience-template_eng_en.qm
+# Without the root directory specified it will not be removed on uninstall
+%{_datadir}/ambience/%{name}
+%{_datadir}/ambience/%{name}/%{name}.ambience
+%{_datadir}/ambience/%{name}/sounds.index
+%{_datadir}/ambience/%{name}/images/*
+%{_datadir}/ambience/%{name}/sounds/*
+%{_datadir}/translations/%{name}_eng_en.qm
 
-%files -n ambience-template-ts-devel
+%files ts-devel
 %defattr(-,root,root,-)
-%{_datadir}/translations/source/ambience-template.ts
+%{_datadir}/translations/source/%{name}.ts
+
+
+# Scripts are verboten for Harbour submission, this is only needed for
+# install methods _other_ than the Store.
+%post
+systemctl-user restart ambienced.service
+

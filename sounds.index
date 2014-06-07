@@ -1,11 +1,11 @@
 {
-    "translationCatalog" : "ambience-template",
+    "translationCatalog" : "harbour-ambience-template",
     "files" : [
-        { "displayName" : "template-ringtone"          , "fileName" : "template-ringtone.wav" },
-        { "displayName" : "template-messagetone"       , "fileName" : "template-message.wav" },
-        { "displayName" : "template-imtone"            , "fileName" : "template-im.wav" },
-        { "displayName" : "template-emailtone"         , "fileName" : "template-email.wav" },
-        { "displayName" : "template-calendar-alarm"    , "fileName" : "template-calendar.wav" },
-        { "displayName" : "template-clock-alarm"       , "fileName" : "template-clock.wav" }
+        { "displayName" : "ringtone"          , "fileName" : "harbour-template-ringtone.wav" },
+        { "displayName" : "messagetone"       , "fileName" : "harbour-template-message.wav" },
+        { "displayName" : "imtone"            , "fileName" : "harbour-template-im.wav" },
+        { "displayName" : "emailtone"         , "fileName" : "harbour-template-email.wav" },
+        { "displayName" : "calendar-alarm"    , "fileName" : "harbour-template-calendar.wav" },
+        { "displayName" : "clock-alarm"       , "fileName" : "harbour-template-clock.wav" }
     ]
 }
